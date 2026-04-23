@@ -1,63 +1,16 @@
-// import 'package:file_structure_flutter/pages/auth_pages/sign_in_page/sign_in_page.dart';
-// import 'package:file_structure_flutter/pages/main_page.dart';
-// import 'package:file_structure_flutter/pages/profile_pages/profile_page/profile_page.dart';
-// import 'package:file_structure_flutter/pages/tickets_pages/ticket_details_page/ticket_details_page.dart';
-// import 'package:file_structure_flutter/pages/tickets_pages/tickets_page/ticket_page.dart';
-// import 'package:flutter/material.dart';
-//
-// class AppRouter {
-//   const AppRouter._();
-//
-//   static Route<dynamic> generateRoute(RouteSettings settings) {
-//     final Object? arguments = settings.arguments;
-//
-//     WidgetBuilder builder;
-//
-//     switch (settings.name) {
-//     // [START] Auth pages
-//
-//       case SignInPage.routeName:
-//         builder = (_) => const SignInPage();
-//         break;
-//
-//     // [END] Auth pages
-//
-//     // [START] Profile pages
-//
-//       case ProfilePage.routeName:
-//         builder = (_) => const ProfilePage();
-//         break;
-//
-//     // [END] Profile pages
-//
-//     // [START] Tickets pages
-//
-//       case TicketDetailsPage.routeName:
-//         final TicketDetailsPageArguments args =
-//         arguments as TicketDetailsPageArguments;
-//         builder = (_) => TicketDetailsPage(
-//           index: args.index,
-//           title: args.title,
-//         );
-//         break;
-//
-//       case TicketsPage.routeName:
-//         builder = (_) => const TicketsPage();
-//         break;
-//
-//     // [END] Tickets pages
-//
-//       case MainPage.routeName:
-//         builder = (_) => const MainPage();
-//         break;
-//
-//       default:
-//         throw Exception('Invalid route: ${settings.name}');
-//     }
-//
-//     return MaterialPageRoute(
-//       builder: builder,
-//       settings: settings,
-//     );
-//   }
-// }
+import 'package:flutter_base_architecture/pages/auth_pages/sign_in_page.dart';
+import 'package:flutter_base_architecture/pages/on_boarding_pages/on_boarding1_page.dart';
+import 'package:flutter_base_architecture/pages/uncategorized_pages/splash_screen_page/splash_screen_page.dart';
+import 'package:go_router/go_router.dart';
+
+final GoRouter appRouter = GoRouter(
+  initialLocation: '/',
+  routes: [
+    GoRoute(path: '/', builder: (context, state) => const SplashScreenPage()),
+    GoRoute(
+      path: '/onboarding1',
+      builder: (context, state) => const OnBoarding1Page(),
+    ),
+    GoRoute(path: '/sign_in', builder: (context, state) => const SignInPage()),
+  ],
+);
