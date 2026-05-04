@@ -17,6 +17,8 @@ dependencies:
   flutter_bloc: ^9.1.1
   freezed: ^3.2.5
 
+  flutter_inset_shadow: ^2.0.0
+
   smooth_page_indicator: ^2.0.1
 
   dio: ^5.9.2

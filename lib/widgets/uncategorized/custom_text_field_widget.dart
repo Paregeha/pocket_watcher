@@ -4,7 +4,9 @@ import 'package:flutter_base_architecture/resources/app_colors.dart';
 import '../../gen/fonts.gen.dart';
 
 class CustomTextFieldWidget extends StatelessWidget {
-  const CustomTextFieldWidget({super.key});
+  const CustomTextFieldWidget({super.key, required this.hintText});
+
+  final String hintText;
 
   @override
   Widget build(BuildContext context) {
@@ -17,12 +19,16 @@ class CustomTextFieldWidget extends StatelessWidget {
       decoration: InputDecoration(
         fillColor: AppColors.secondColor,
         filled: true,
-        hintText: 'Enter your email',
+        hintText: hintText,
         hintStyle: TextStyle(
           color: AppColors.mainLightColor.withValues(alpha: 0.5),
           fontFamily: FontFamily.poppins,
           fontWeight: FontWeight.w700,
           fontSize: 16.0,
+        ),
+        contentPadding: const EdgeInsets.symmetric(
+          vertical: 13.0,
+          horizontal: 20.0,
         ),
         border: inputBorder,
         enabledBorder: inputBorder,

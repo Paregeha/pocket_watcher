@@ -18,6 +18,10 @@ class $AssetsImagesGen {
   AssetGenImage get bigLogo =>
       const AssetGenImage('assets/images/big_logo.png');
 
+  /// File path: assets/images/icon_google.png
+  AssetGenImage get iconGoogle =>
+      const AssetGenImage('assets/images/icon_google.png');
+
   /// File path: assets/images/logo_image.png
   AssetGenImage get logoImage =>
       const AssetGenImage('assets/images/logo_image.png');
@@ -49,6 +53,7 @@ class $AssetsImagesGen {
   /// List of all assets
   List<AssetGenImage> get values => [
     bigLogo,
+    iconGoogle,
     logoImage,
     mediumLogo,
     onBoarding1,
