@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_base_architecture/gen/assets.gen.dart';
 import 'package:flutter_base_architecture/gen/fonts.gen.dart';
 import 'package:flutter_base_architecture/resources/app_colors.dart';
+import 'package:flutter_base_architecture/routes/app_routes.dart';
 import 'package:go_router/go_router.dart';
 
 class SplashScreenPage extends StatefulWidget {
@@ -22,7 +23,7 @@ class _SplashScreenPageState extends State<SplashScreenPage> {
     await Future.delayed(const Duration(seconds: 2));
 
     if (!mounted) return;
-    context.go('/onboarding1');
+    context.go(AppRoutes.onboarding);
   }
 
   @override

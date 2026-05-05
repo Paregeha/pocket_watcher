@@ -1,17 +1,27 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_base_architecture/gen/assets.gen.dart';
 import 'package:flutter_base_architecture/resources/app_colors.dart';
 
 class CustomButtonIconsWidget extends StatelessWidget {
-  const CustomButtonIconsWidget({super.key});
+  const CustomButtonIconsWidget({
+    super.key,
+    required this.icon,
+    this.onTap,
+    this.size = 56.0,
+  });
+
+  final Widget icon;
+  final VoidCallback? onTap;
+  final double size;
 
   @override
   Widget build(BuildContext context) {
+    final buttonSize = size < 48.0 ? 48.0 : size;
+
     return Container(
-      width: 60,
-      height: 60,
+      width: buttonSize,
+      height: buttonSize,
       decoration: BoxDecoration(
-        color: AppColors.mainDarkColor, // Основний колір
+        color: AppColors.mainDarkColor,
         borderRadius: BorderRadius.circular(14.0),
         border: Border.all(color: AppColors.mainDarkColor, width: 1.0),
       ),
@@ -25,12 +35,8 @@ class CustomButtonIconsWidget extends StatelessWidget {
           color: Colors.transparent,
           child: InkWell(
             borderRadius: BorderRadius.circular(14),
-            onTap: () {
-              //TODO: implement onTap
-            },
-            child: Center(
-              child: Assets.images.iconGoogle.image(width: 24, height: 24),
-            ),
+            onTap: onTap,
+            child: Center(child: icon),
           ),
         ),
       ),

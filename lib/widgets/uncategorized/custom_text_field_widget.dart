@@ -4,9 +4,22 @@ import 'package:flutter_base_architecture/resources/app_colors.dart';
 import '../../gen/fonts.gen.dart';
 
 class CustomTextFieldWidget extends StatelessWidget {
-  const CustomTextFieldWidget({super.key, required this.hintText});
+  const CustomTextFieldWidget({
+    super.key,
+    required this.hintText,
+    this.obscureText = false,
+    this.keyboardType,
+    this.textInputAction,
+    this.controller,
+    this.onSubmitted,
+  });
 
   final String hintText;
+  final bool obscureText;
+  final TextInputType? keyboardType;
+  final TextInputAction? textInputAction;
+  final TextEditingController? controller;
+  final ValueChanged<String>? onSubmitted;
 
   @override
   Widget build(BuildContext context) {
@@ -16,6 +29,11 @@ class CustomTextFieldWidget extends StatelessWidget {
     );
 
     return TextField(
+      controller: controller,
+      obscureText: obscureText,
+      keyboardType: keyboardType,
+      textInputAction: textInputAction,
+      onSubmitted: onSubmitted,
       decoration: InputDecoration(
         fillColor: AppColors.secondColor,
         filled: true,

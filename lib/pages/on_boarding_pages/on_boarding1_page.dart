@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_base_architecture/gen/assets.gen.dart';
 import 'package:flutter_base_architecture/resources/app_colors.dart';
+import 'package:flutter_base_architecture/routes/app_routes.dart';
 import 'package:flutter_base_architecture/widgets/buttons/on_boarding_button_widget.dart';
 import 'package:go_router/go_router.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
@@ -78,7 +79,7 @@ class _OnBoarding1PageState extends State<OnBoarding1Page> {
 
   void _goNext() {
     if (_isLastPage) {
-      context.go('/sign_in');
+      context.go(AppRoutes.signIn);
       return;
     }
 
